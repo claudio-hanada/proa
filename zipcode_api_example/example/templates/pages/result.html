@@ -1,0 +1,44 @@
+{% load static %}
+<html>
+    <head>
+        <title>Resultado</title>
+    </head>
+    <body style="display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    align-items: center;">
+        <div class="card" style="width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;">
+            <div class="card-title">
+                <h1>Dados do endereço</h1>
+            </div>
+            {% for result in data %}
+            <div class="card-body" style="width: 50%;
+            box-shadow: rgba(63, 55, 55, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; margin-top:10px;padding: 20px;">
+                <div class="row">
+                    <div class="col-12">
+                        CEP: {{result.cep}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        Endereço: {{result.logradouro}}
+                        <br>
+                        Complemento: {{result.complemento}}
+                        <br>
+                        Bairro: {{result.bairro}}
+                        <br>
+                        Cidade: {{result.localidade}}
+                        <br>
+                        Estado: {{result.uf}}
+                        <br>
+                        DDD: {{result.ddd}}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </body>
+</html>

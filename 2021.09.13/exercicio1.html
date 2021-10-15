@@ -1,0 +1,25 @@
+<html>
+    <head>
+
+    </head>
+    <script>
+        function calculate(idade_animal, taxa_conversao, pet){
+            idade = parseInt(idade_animal) * parseFloat(taxa_conversao)
+            document.write('Seu '+ pet +' tem '+ idade.toFixed(2) +' anos em anos humanos!<br>')
+        }
+
+        // expectativa de vida de humanos é 79 anos em média (13/09/2021)
+        // expectativa de vida de canguru é 18 anos em média (13/09/2021)
+        // expectativa de vida de baleia azul é 80 a 90 anos em média (13/09/2021)
+        var expectativa_do_humana = 79;
+        var expectativa_do_canguru = 18;
+        var expectativa_da_baleia_azul = 90;
+        var conversao_cachorro = 7;
+        calculate(3, conversao_cachorro, 'cachorro');
+        calculate(3, (expectativa_do_canguru/expectativa_do_humana), 'canguru');
+        calculate(3, (expectativa_da_baleia_azul/expectativa_do_humana), 'baleia azul');
+    </script>
+    <body>
+        
+    </body>
+</html>

@@ -1,0 +1,65 @@
+body{
+    display: grid;
+    grid-template:
+        'green green green'
+        'yellow red blue'
+        'orange orange blue';
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    gap: 20px;
+}
+
+h2{
+    color: #000;
+    font:bolder;
+}
+
+.green{
+    padding: 30px;
+    background-color: #5bff33;
+    opacity: 0.4;
+    grid-area: green;
+}
+
+.yellow{
+    padding: 30px;
+    background-color: #f0ff33;
+    opacity: 0.4;
+    grid-area: yellow;
+}
+
+.red{
+    padding: 30px;
+    background-color: #f8352f;
+    opacity: 0.4;
+    grid-area: red;
+}
+
+.blue{
+    padding: 30px;
+    background-color: #33b8ff;
+    opacity: 0.4;
+    grid-area: blue;
+}
+
+.orange{
+    padding: 30px;
+    background-color: #ff7a33;
+    opacity: 0.4;
+    grid-area: orange;
+}
+
+.inner-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+    gap: 10px;
+}
+
+.inner-grid div{
+    background-color: #fff;
+    width: 33%;
+    height: 30px;
+    padding: 10px;
+}

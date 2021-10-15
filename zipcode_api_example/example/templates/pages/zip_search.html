@@ -1,0 +1,48 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'core/css/styles.css' %}">
+        <title>Formulario</title>
+    </head>
+    <script src="{% static 'core/js/script.js' %}"></script>
+    <body>
+        <form action=" {% url 'result' %}" method="POST">
+            {% csrf_token %}
+            <div class="card">
+                <div class="card-title">
+                    <h1>Encontre os dados do seu endereço</h1>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <label for="id_cep">{{form.cep.label}}</label>
+                            {{form.cep}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="center">
+                            Ou
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="id_uf">{{form.uf.label}}</label>
+                            {{form.uf}}
+                        </div>
+                        <div class="col-6">
+                            <label for="id_localidade">{{form.localidade.label}}</label>
+                            {{form.localidade}}
+                        </div>
+                        <div class="col-6">
+                            <label for="id_logradouro">{{form.logradouro.label}}</label>
+                            {{form.logradouro}}
+                        </div>
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="Pesquisar">
+                </div>
+            </div>
+        </form>
+    </body>
+</html>

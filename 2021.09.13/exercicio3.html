@@ -1,0 +1,24 @@
+<html>
+    <head>
+
+    </head>
+    <script>
+        // expectativa de vida de humanos é 79 anos em média (13/09/2021)
+        var expectativa_do_humana = 79;
+
+        function calcularMeuLanche(idade, lanches_dia){
+            var lanches = 0;
+            for(idade; idade<expectativa_do_humana; idade++){
+                lanches += (parseInt(lanches_dia)*365);
+            }
+            document.write("Você precisará de "+ lanches +" para durar até a idade "+ expectativa_do_humana +"<br>")
+        }
+
+        calcularMeuLanche(22, 4)
+        calcularMeuLanche(31, 3)
+        calcularMeuLanche(12, 5)
+    </script>
+    <body>
+        
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+    <head>
+
+    </head>
+    <script>
+        function converterCelsiusFahrenheit(temperatura_celcius){
+            var temperatura_fahrenheit = (temperatura_celcius * 1.8) + 32;
+            document.write(temperatura_celcius + "° C é igual a "+ temperatura_fahrenheit.toFixed(2)+"° F <br>")
+        }
+
+        function converterFahrenheitCelsius(temperatura_fahrenheit){
+            var temperatura_celcius = (temperatura_fahrenheit - 32) / 1.8;
+            document.write(temperatura_fahrenheit + "° F é igual a "+ temperatura_celcius.toFixed(2)+"° C <br>")
+        }
+
+        document.write('1ª checagem <br>')
+        converterCelsiusFahrenheit(30)
+        converterFahrenheitCelsius(256)
+        
+        document.write('<br>2ª checagem <br>')
+        converterCelsiusFahrenheit(47)
+        converterFahrenheitCelsius(10)
+
+        document.write('<br>3ª checagem <br>')
+        converterCelsiusFahrenheit(65)
+        converterFahrenheitCelsius(33)
+    </script>
+    <body>
+        
+    </body>
+</html>

@@ -1,0 +1,181 @@
+<html>
+
+<head>
+
+	<script>
+		var saldo = 100.0;
+		var nome = "";
+		var extrato = "";
+		var senha = "3589";
+
+		function inicio() {
+			var escolha = parseInt(prompt('Selecione uma opção\n1.) Saldo\n2.) Extrato\n3.) Saque\n4.) Depósito\n5.)Transferencia\n6.) Sair'));
+
+			switch (escolha) {
+				case 1:
+					ver_saldo();
+					break;
+				case 2:
+					ver_extrato();
+					break;
+				case 3:
+					fazer_saque();
+					break;
+				case 4:
+					fazer_deposito();
+					break;
+				case 5:
+					fazer_transferencia();
+					break;
+				case 6:
+					sair();
+					break;
+				default:
+					erro();
+					break;
+			}
+		}		
+
+		function ver_saldo() {
+			var chave = prompt("Digite a senha para acessar saldo")
+			if (validar_senha(chave)){
+				alert('Seu saldo atual é: R$' + saldo);
+				inicio();
+			}
+			else{
+				senha_incorreta();
+			}
+		}
+
+		function ver_saldo_sem_senha(){
+			alert('Seu saldo atual é: R$' + saldo);
+			inicio();
+		}
+
+		function fazer_deposito() {
+			var deposito = parseFloat(prompt('Qual o valor para depósito?'));
+			if (isNaN(deposito) || deposito === '') {
+				alert('Por favor, informe um número:');
+				inicio();
+			} else {
+				if (deposito > 0){
+					saldo += deposito;
+					extrato += "\n"+ nome+ " depositou R$" + deposito+" na conta.";
+					ver_saldo_sem_senha();
+				}
+				alert('Operação não autorizada');
+				inicio();
+			}
+		}
+
+		function fazer_saque() {
+			var chave = prompt("Digite a senha para fazer um saque")
+			if (validar_senha(chave)){
+				var saque = parseFloat(prompt('Qual o valor para saque?'));
+				if (isNaN(saque) || saque === '') {
+					alert('Por favor, informe um número:');
+					inicio();
+				} else {
+					if (saque > saldo){
+						alert('Saldo insuficiente para saque, por favor informe, um valor de saque de até R$' + saldo);
+						inicio();
+					}
+					else if(saque <= 0){
+						alert('Operação não autorizada');
+						inicio();
+					}
+					else{
+						saldo -= saque;
+						extrato += "\n"+ nome+ " sacou R$" + saque+" da conta.";
+						ver_saldo_sem_senha();
+					}
+				}
+			}
+			else{
+				senha_incorreta();
+			}
+		}
+
+		function ver_extrato(){
+			var chave = prompt("Digite a senha para acessar extrato")
+			if (validar_senha(chave)){
+				if (extrato === ""){
+					alert("Não há extrato disponível.\nPS: faça algumas operações para serem listadas no extrato");
+					inicio();
+				}else{
+					alert(extrato);
+					inicio();
+				}
+				alert(extrato);
+				inicio();
+			}
+			else{
+				senha_incorreta();
+			}
+		}
+
+		function fazer_transferencia(){
+			var conta = prompt("informe o número da conta:")
+			if (isNaN(conta) || conta === '' || parseInt(conta) <= 0){
+				alert("Por favor, informe apenas os números da conta");
+				inicio();
+			}
+			else{
+				var transferencia = "";
+				do{
+					transferencia = parseFloat(prompt("Informe o valor da transferencia"));
+				}while(isNaN(transferencia) || transferencia === '');
+
+				if (transferencia <= saldo && transferencia > 0){
+					saldo -= transferencia;
+					extrato += "\n"+ nome+ " transferiu R$" + transferencia +" para conta "+ conta +".";
+					ver_saldo_sem_senha();
+				}
+				else{
+					alert("Operação não autorizada")
+					inicio()
+				}
+			}
+		}
+
+		function erro() {
+			alert('Por favor, informe um número entre 1 e 6');
+			inicio();
+		}
+
+		function senha_incorreta(){
+			alert('Senha incorreta.');
+			inicio();
+		}
+
+		function sair() {
+			var confirma = confirm('Você deseja sair?');
+			if (confirma) {
+				alert(nome +", muito obrgado por utilizar nossos serviços, foi um prazer ter você por aqui!.\nEsperamos te ver novamente.")
+				window.close();
+			} else {
+				inicio();
+			}
+		}
+
+		function validar_senha(password){
+			if (String(password) == String(senha)){
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
+
+		nome = prompt("Qual seu nome?")
+		alert("Olá "+ nome +" é um prazer ter você por aqui!")
+
+		inicio();
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

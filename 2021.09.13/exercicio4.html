@@ -1,0 +1,33 @@
+<html>
+    <head>
+
+    </head>
+    <script>
+        var pi = 3.14
+
+        function calcularCircunferencia(diametro){
+            var circunferência = pi *diametro
+            document.write('A circunferência é '+ circunferência + '<br>')
+        }
+
+        function calcularArea(raio){
+            var area = pi * (raio * raio)
+            document.write('A área é '+ area + '<br>')
+        }
+
+        function calcularMedidas(diametro, raio){
+            document.write('Medida da circunferencia <br>')
+            calcularCircunferencia(diametro);
+            calcularArea(raio)
+            document.write('<br>')
+        }
+
+        calcularMedidas(4, 3);
+        calcularMedidas(13, 7);
+        calcularMedidas(3, 1);
+        
+    </script>
+    <body>
+        
+    </body>
+</html>

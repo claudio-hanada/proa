@@ -1,0 +1,60 @@
+.andar{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.usuario{
+    display: flex;
+    justify-content: flex-end;
+    width: 300px;
+}
+
+.botao{
+    border: solid 2px #000;
+    border-radius: 5%;
+    margin-left: 3px;
+    height: 20px;
+}
+
+.botao:hover{
+    cursor: pointer;
+}
+
+.cabine{
+    width: 40px;
+    height: 40px;
+    background-color: #000;
+    border: 1px solid #000;
+}
+
+
+.seta_baixo {
+    position: relative;
+    top: -3px;
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-right: 0.2em solid black;
+    border-top: 0.2em solid black;
+    transform: rotate(135deg);
+    margin: 0.25em;
+}
+
+.seta_cima {
+    position: relative;
+    top: 3px;
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-right: 0.2em solid black;
+    border-top: 0.2em solid black;
+    transform: rotate(-45deg);
+    margin: 0.25em;
+}
+
+.ativo{
+    background-color: #fff;
+}
+
